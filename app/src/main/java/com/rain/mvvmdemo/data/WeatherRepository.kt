@@ -41,12 +41,28 @@ class WeatherRepository private constructor(
 
     suspend fun refreshBingPic() = requestBingPic()
 
-    private suspend fun requestBingPic() =withContext(Dispatchers.IO) {
+    private suspend fun requestBingPic() = withContext(Dispatchers.IO) {
         val url = network.fetchBingPic()
         weatherDao.cacheBingPic(url)
         url
     }
 
+    companion object {
+        private var instance: WeatherRepository? = null
+        fun getInstance(
+            weatherDao: WeatherDao,
+            network: CoolWeatherNetwork
+        ):WeatherRepository {
+            if (instance == null) {
+                synchronized(WeatherRepository::class.java) {
+                    if (instance == null) {
+                        instance = WeatherRepository(weatherDao, network)
+                    }
+                }
+            }
+            return instance!!
+        }
+    }
 
 
 }

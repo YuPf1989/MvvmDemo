@@ -1,5 +1,6 @@
 package com.rain.mvvmdemo.ui.area
 
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 
 /**
@@ -9,6 +10,22 @@ import androidx.fragment.app.Fragment
  */
 class ChooseAreaFragment:Fragment() {
     companion object {
+        const val LEVEL_PROVINCE = 0
+        const val LEVEL_CITY = 1
+        const val LEVEL_COUNTY = 2
         fun getInstance() = ChooseAreaFragment()
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+    }
+
+
+
 }

@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.rain.mvvmdemo.ui.MainViewModel
 import com.rain.mvvmdemo.ui.area.ChooseAreaFragment
 import com.rain.mvvmdemo.ui.weather.WeatherActivity
+import com.rain.mvvmdemo.util.InjectorUtil
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 .show()
         } else {
-            val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+            val viewModel = ViewModelProviders.of(this,InjectorUtil.getMainModelFactory()).get(MainViewModel::class.java)
             if (viewModel.isWeatherCached()) {
                 Intent(this, WeatherActivity::class.java).apply {
                     startActivity(this)
