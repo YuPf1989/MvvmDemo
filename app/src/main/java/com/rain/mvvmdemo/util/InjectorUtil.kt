@@ -6,6 +6,7 @@ import com.rain.mvvmdemo.data.network.CoolWeatherNetwork
 import com.rain.mvvmdemo.db.CoolWeatherDatabase
 import com.rain.mvvmdemo.ui.MainModelFactory
 import com.rain.mvvmdemo.ui.area.ChooseAreaModelFactory
+import com.rain.mvvmdemo.ui.weather.WeatherModelFactory
 
 /**
  * Author:rain
@@ -14,11 +15,14 @@ import com.rain.mvvmdemo.ui.area.ChooseAreaModelFactory
  */
 object InjectorUtil {
 
+
     private fun getPlaceRepository() = PlaceRepository.getInstance(CoolWeatherDatabase.getPlaceDao(), CoolWeatherNetwork.getInstance())
 
     private fun getWeatherRepository() = WeatherRepository.getInstance(CoolWeatherDatabase.getWeatherDao(), CoolWeatherNetwork.getInstance())
 
     fun getChooseAreaModelFactory() = ChooseAreaModelFactory(getPlaceRepository())
+
+    fun getWeatherModelFactory() = WeatherModelFactory(getWeatherRepository())
 
     fun getMainModelFactory() = MainModelFactory(getWeatherRepository())
 }

@@ -1,4 +1,4 @@
-package com.coolweather.coolweatherjetpack.data.model.place
+package com.rain.mvvmdemo.data.model.place
 
 import com.google.gson.annotations.SerializedName
 import org.litepal.crud.LitePalSupport

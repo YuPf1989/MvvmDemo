@@ -1,8 +1,8 @@
 package com.rain.mvvmdemo.data.network.api
 
-import com.coolweather.coolweatherjetpack.data.model.place.City
-import com.coolweather.coolweatherjetpack.data.model.place.County
-import com.coolweather.coolweatherjetpack.data.model.place.Province
+import com.rain.mvvmdemo.data.model.place.City
+import com.rain.mvvmdemo.data.model.place.County
+import com.rain.mvvmdemo.data.model.place.Province
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

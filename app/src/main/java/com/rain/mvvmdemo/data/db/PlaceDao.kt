@@ -1,8 +1,8 @@
 package com.rain.mvvmdemo.data.db
 
-import com.coolweather.coolweatherjetpack.data.model.place.City
-import com.coolweather.coolweatherjetpack.data.model.place.County
-import com.coolweather.coolweatherjetpack.data.model.place.Province
+import com.rain.mvvmdemo.data.model.place.City
+import com.rain.mvvmdemo.data.model.place.County
+import com.rain.mvvmdemo.data.model.place.Province
 import org.litepal.LitePal
 
 /**
@@ -13,7 +13,8 @@ import org.litepal.LitePal
 class PlaceDao {
     fun getProvinceList():MutableList<Province> = LitePal.findAll(Province::class.java)
 
-    fun getCityList(provinceId: Int): MutableList<City> = LitePal.where("provinceId = ?", provinceId.toString()).find(City::class.java)
+    fun getCityList(provinceId: Int): MutableList<City> = LitePal.where("provinceId = ?", provinceId.toString()).find(
+        City::class.java)
 
     fun getCountyList(cityId: Int): MutableList<County> = LitePal.where("cityId = ?", cityId.toString()).find(County::class.java)
 

@@ -6,9 +6,9 @@ import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.coolweather.coolweatherjetpack.data.model.place.City
-import com.coolweather.coolweatherjetpack.data.model.place.County
-import com.coolweather.coolweatherjetpack.data.model.place.Province
+import com.rain.mvvmdemo.data.model.place.City
+import com.rain.mvvmdemo.data.model.place.County
+import com.rain.mvvmdemo.data.model.place.Province
 import com.rain.mvvmdemo.CoolWeatherApplication
 import com.rain.mvvmdemo.data.PlaceRepository
 import com.rain.mvvmdemo.ui.area.ChooseAreaFragment.Companion.LEVEL_CITY
